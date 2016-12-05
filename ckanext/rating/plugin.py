@@ -21,7 +21,7 @@ class RatingPlugin(plugins.SingletonPlugin):
     # IActions
 
     def get_actions(self):
-        return { 
+        return {
             'rating_package_create': action.rating_package_create,
             'rating_package_get': action.rating_package_get,
             'rating_showcase_create': action.rating_package_create,
@@ -33,7 +33,8 @@ class RatingPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
             'package_rating': action.rating_package_get,
-            'get_user_rating': helpers.get_user_rating
+            'get_user_rating': helpers.get_user_rating,
+            'check_access_user': helpers.check_access_user
         }
 
     # IRoutes
