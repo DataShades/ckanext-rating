@@ -2,7 +2,7 @@
 CKAN Rating extension
 =============
 
-This is a simple rating extension for CKAN datasets (packages) and showcases. The extension adds a list of clickable stars to the side navigation 
+This is a simple rating extension for CKAN datasets (packages) and showcases. The extension adds a list of clickable stars to the side navigation
 in the dataset and showcacse templates similar to ckanext-qa. In showcase the stars are also displayed in the showcase listing, but are not clickable.
 
 The stars can also be added to any desired view by adding the following code to the desired template::
@@ -20,7 +20,7 @@ Rating is identified with client IP if the user is not authenticated. User ID is
 Requirements
 ------------
 
-This extension works with CKAN version 2.5 or later. 
+This extension works with CKAN version 2.5 or later.
 
 
 ------------
@@ -51,6 +51,15 @@ To install ckanext-rating:
 
 6. If you want to use this extension for ckanext-showcase, install it into your environment by following the instructions at https://github.com/ckan/ckanext-showcase
 
+
+---------------
+Config Settings
+---------------
+
+Rating is enabled or disabled for unauthenticated users::
+
+  rating.enabled_for_unauthenticated_users = true or false
+  
 
 ------------------------
 Development Installation
