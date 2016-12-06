@@ -10,10 +10,6 @@
   margin-bottom: 20px;
 }
 
-.rating-star {
-  font-size: 1.5em;
-}
-
 a.rating-star-hover,
 a.rating-star-hover:hover {
   color: #a38729;
@@ -22,4 +18,10 @@ a.rating-star-hover:hover {
 .rating-description {
   color: #7c7c82;
   font-size: 14px;
+}
+
+a.rating-star-hover .user-rating-star,
+a.rating-star:hover .user-rating-star,
+a.rating-star:active .user-rating-star {
+  display: none;
 }
