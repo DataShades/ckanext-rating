@@ -12,9 +12,7 @@ def rating_create_auth():
 
 @logic.auth_allow_anonymous_access
 def check_access_user(context, data_dict):
-    print 'Hello from def check_access_user():'
-    print 'context = {}'.format(context)
-    if c.user:#context[user]
+    if c.user:
         return {'success': True}
     else:
         allow_rating = config.get('rating.enabled_for_unauthenticated_users')
