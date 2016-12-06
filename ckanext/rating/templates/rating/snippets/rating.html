@@ -6,6 +6,8 @@ package  - The package for which the rating is displayed
     {% snippet "rating/snippets/rating.html", package=pkg %}
 #}
 
+{% resource "rating_css/rating.css" %}
+
 <div class="rating">
   {% block general_rating %}
     <h2 class="heading">{{ _('Rating') }}</h2>
