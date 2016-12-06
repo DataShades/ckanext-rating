@@ -15,9 +15,5 @@ def check_access_user(context, data_dict):
     if c.user:
         return {'success': True}
     else:
-        allow_rating = config.get('rating.enabled_for_unauthenticated_users')
-        if allow_rating == 'false' or '':
-            return {'success': False}
-        if allow_rating == 'true':
-            return {'success': True}
-    return {'success': False}
+        allow_rating = toolkit.asbool(config.get('rating.enabled_for_unauthenticated_users', True))
+    return {'success': allow_rating}
