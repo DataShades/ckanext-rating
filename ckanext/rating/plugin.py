@@ -2,12 +2,14 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckanext.rating.logic import action
 from ckanext.rating import helpers
+import ckanext.rating.logic.auth as rating_auth
 
 class RatingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IRoutes, inherit=True)
+    plugins.implements(plugins.IAuthFunctions)
 
     # IConfigurer
 
@@ -33,9 +35,13 @@ class RatingPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
             'package_rating': action.rating_package_get,
-            'get_user_rating': helpers.get_user_rating,
-            'check_access_user': helpers.check_access_user
+            'get_user_rating': helpers.get_user_rating
         }
+
+    # IAuthFunctions
+
+    def get_auth_functions(self):
+        return rating_auth.get_rating_auth_dict()
 
     # IRoutes
 
