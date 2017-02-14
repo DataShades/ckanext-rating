@@ -20,6 +20,15 @@ a.rating-star-hover:hover {
   font-size: 14px;
 }
 
+.dataset-raiting {
+    float: right;
+    display: inline-block;
+}
+
+.dataset-raiting span {
+    font-size: 14px;
+}
+
 a.rating-star-hover .user-rating-star,
 a.rating-star:hover .user-rating-star,
 a.rating-star:active .user-rating-star {
