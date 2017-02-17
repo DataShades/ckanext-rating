@@ -7,7 +7,7 @@ in the dataset and showcacse templates similar to ckanext-qa. In showcase the st
 
 The stars can also be added to any desired view by adding the following code to the desired template::
 
-    {% snippet "rating/stars.html", package=<YOUR_PACKAGE> %}
+    {% snippet "rating/snippets/stars.html", package=<YOUR_PACKAGE> %}
 
 The amount of ratings submitted can also be displayed with::
 
@@ -34,8 +34,7 @@ To install ckanext-rating:
      . /usr/lib/ckan/default/bin/activate
 
 2. Install the ckanext-rating Python package into your virtual environment::
-
-     pip install ckanext-rating
+     pip install -e git+https://github.com/6aika/ckanext-rating.git#egg=ckanext-rating
 
 3. Add ``rating`` to the ``ckan.plugins`` setting in your CKAN
    config file (by default the config file is located at
@@ -59,7 +58,13 @@ Config Settings
 Rating is enabled or disabled for unauthenticated users::
 
   rating.enabled_for_unauthenticated_users = true or false
-  
+
+=======
+
+Optional::
+
+    # List of dataset types for which the rating will be shown (defaults to ['dataset'])
+    ckanext.rating.enabled_dataset_types
 
 ------------------------
 Development Installation
